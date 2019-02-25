@@ -1,0 +1,38 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+h1 {
+}
+
+.query pre {
+  /* Using !important to override react-syntax-highlighter inline styles */
+
+  background: transparent !important;
+  margin: 4px 0 !important;
+  padding: 0 !important;
+}
+
+div.query pre {
+  /* Using !important to override react-syntax-highlighter inline styles */
+
+  margin: 1em 0 !important;
+}
+
+.btn-xs {
+  color: #222;
+  line-height: 1.1em;
+  padding: .15em .3em;
+  margin-top: -.1em;
+}
