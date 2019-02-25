@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import App  from './components/App';
+import Index  from './components/Index';
 import QueryEdit from './components/QueryEdit';
 import QueryExecute from './components/QueryExecute';
 
@@ -10,7 +10,7 @@ if (document.getElementById('app-content')) {
         <BrowserRouter>
             <div>
                 <Switch>
-                    <Route exact path="/home" component={App}/>
+                    <Route exact path="/home" component={Index}/>
                     <Route exact path="/add" component={QueryEdit}/>
                     <Route exact path="/:id/edit" component={QueryEdit}/>
                     <Route exact path="/:id/execute" component={QueryExecute}/>

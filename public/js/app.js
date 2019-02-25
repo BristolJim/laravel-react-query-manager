@@ -110738,7 +110738,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./index */ "./resources/js/index.js");
+__webpack_require__(/*! ./index.jsx */ "./resources/js/index.jsx");
 
 /***/ }),
 
@@ -110800,16 +110800,16 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/App.js":
-/*!****************************************!*\
-  !*** ./resources/js/components/App.js ***!
-  \****************************************/
+/***/ "./resources/js/components/Index.jsx":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Index.jsx ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return App; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
@@ -110846,17 +110846,17 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var App =
+var Index =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(App, _Component);
+  _inherits(Index, _Component);
 
-  function App(props) {
+  function Index(props) {
     var _this;
 
-    _classCallCheck(this, App);
+    _classCallCheck(this, Index);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
     _this.state = {
       query: {
         name: '',
@@ -110870,7 +110870,7 @@ function (_Component) {
     return _this;
   }
 
-  _createClass(App, [{
+  _createClass(Index, [{
     key: "handleChange",
     value: function handleChange(e) {
       var query = this.state.query;
@@ -110974,17 +110974,17 @@ function (_Component) {
     }
   }]);
 
-  return App;
+  return Index;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
 
 /***/ }),
 
-/***/ "./resources/js/components/QueryEdit.js":
-/*!**********************************************!*\
-  !*** ./resources/js/components/QueryEdit.js ***!
-  \**********************************************/
+/***/ "./resources/js/components/QueryEdit.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/components/QueryEdit.jsx ***!
+  \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -111146,10 +111146,10 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/QueryExecute.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/QueryExecute.js ***!
-  \*************************************************/
+/***/ "./resources/js/components/QueryExecute.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/QueryExecute.jsx ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -111160,6 +111160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_syntax_highlighter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-syntax-highlighter */ "./node_modules/react-syntax-highlighter/dist/esm/index.js");
 /* harmony import */ var react_syntax_highlighter_dist_esm_styles_hljs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-syntax-highlighter/dist/esm/styles/hljs */ "./node_modules/react-syntax-highlighter/dist/esm/styles/hljs/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -111177,6 +111178,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -111228,12 +111230,14 @@ function (_Component) {
       var columnNames = Object.keys(this.state.result[0]);
       var tableHead = columnNames.map(function (columnName, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-          key: "th" + i,
+          key: "th-" + i,
           className: "pr-2"
         }, columnName);
       });
       var tableBody = this.state.result.map(function (row, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, columnNames.map(function (columnName, j) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: "tr-" + i
+        }, columnNames.map(function (columnName, j) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
             key: "td-" + i + "-" + j,
             className: "pr-2"
@@ -111272,7 +111276,14 @@ function (_Component) {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
-      }, this.renderResult())))));
+      }, this.renderResult())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col pb-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        className: "btn btn-primary",
+        to: "/home"
+      }, "Home"))))));
     }
   }]);
 
@@ -111283,10 +111294,10 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/index.js":
-/*!*******************************!*\
-  !*** ./resources/js/index.js ***!
-  \*******************************/
+/***/ "./resources/js/index.jsx":
+/*!********************************!*\
+  !*** ./resources/js/index.jsx ***!
+  \********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -111297,9 +111308,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.js");
-/* harmony import */ var _components_QueryEdit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/QueryEdit */ "./resources/js/components/QueryEdit.js");
-/* harmony import */ var _components_QueryExecute__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/QueryExecute */ "./resources/js/components/QueryExecute.js");
+/* harmony import */ var _components_Index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Index */ "./resources/js/components/Index.jsx");
+/* harmony import */ var _components_QueryEdit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/QueryEdit */ "./resources/js/components/QueryEdit.jsx");
+/* harmony import */ var _components_QueryExecute__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/QueryExecute */ "./resources/js/components/QueryExecute.jsx");
 
 
 
@@ -111311,7 +111322,7 @@ if (document.getElementById('app-content')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/home",
-    component: _components_App__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _components_Index__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/add",

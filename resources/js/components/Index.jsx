@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {brownPaper}  from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-export default class App extends Component {
+export default class Index extends Component {
     constructor(props) {
         super(props);
 

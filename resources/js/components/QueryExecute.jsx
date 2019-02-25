@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {brownPaper} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {Link} from "react-router-dom";
 
 export default class QueryExecute extends Component {
     constructor(props) {
@@ -43,11 +44,11 @@ export default class QueryExecute extends Component {
         let columnNames = Object.keys(this.state.result[0]);
 
         const tableHead = columnNames.map((columnName, i) => (
-            <th key={"th" + i} className="pr-2">{columnName}</th>
+            <th key={"th-" + i} className="pr-2">{columnName}</th>
         ));
 
         const tableBody = this.state.result.map((row, i) => (
-            <tr>
+            <tr key={"tr-" + i}>
                 {columnNames.map((columnName, j) => (
                     <td key={"td-" + i + "-" + j} className="pr-2">{row[columnName]}</td>
                 ))}
@@ -67,7 +68,7 @@ export default class QueryExecute extends Component {
     }
 
     render() {
-        if (typeof this.state.query == "undefined") return <div></div>;
+        if (typeof this.state.query == "undefined") return <div />;
 
         return (
             <div>
@@ -91,6 +92,13 @@ export default class QueryExecute extends Component {
                         <div className="row">
                             <div className="col">
                                 {this.renderResult()}
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col pb-2">
+                                <Link className="btn btn-primary" to="/home">
+                                    Home
+                                </Link>
                             </div>
                         </div>
                     </div>

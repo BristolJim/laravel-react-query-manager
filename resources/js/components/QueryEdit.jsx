@@ -69,7 +69,7 @@ export default class QueryEdit extends Component {
     }
 
     render() {
-        if (this.state.edit && typeof this.state.query == "undefined") return <div></div>;
+        if (this.state.edit && typeof this.state.query == "undefined") return <div/>;
 
         return (
             <div className="row justify-content-center">
